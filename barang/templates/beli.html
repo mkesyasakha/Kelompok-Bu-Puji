@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>PasarOnline App</title>
+  <meta name="description" content="Aplikasi Kantin"/>
+  <meta name="keywords" content="kantin review,makanan kantin"/>
+  <!-- Css Only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body style="background: rgb(79,83,103);
+  background: radial-gradient(circle, rgba(79,83,103,1) 0%, rgba(0,0,0,1) 100%);
+  font-family: 'Sulphur Point', sans-serif;">
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <h1 style="color:whitesmoke" class="text-center">Data Beli <br> ~~~~~~~~~~</h1>
+        
+        <div class="mt-5">
+            <h2 class="text-center" style="color:whitesmoke">Nama Pemesan : {{nama_pemesan}}</h2>
+            <h2 class="text-center" style="color:whitesmoke">No.Telepon : {{nomor}}</h2>
+            <br><br>
+            <h2 class="text-center" style="color:green; font-weight:700;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h2>
+            <h2 class="text-center" style="color:green; font-weight:700;">Selamat Pesanan Kamu Berhasil</h2>
+            <h2 class="text-center" style="color:green; font-weight:700;">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h2>
+            
+        </div>
+    </div>
+    {% endblock content %}    
+  </body>
+</html>

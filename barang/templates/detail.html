@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>PasarOnline App</title>
+  <meta name="description" content="Aplikasi Kantin"/>
+  <meta name="keywords" content="kantin review,makanan kantin"/>
+  <!-- Css Only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body style="background: rgb(79,83,103);
+  background: radial-gradient(circle, rgba(79,83,103,1) 0%, rgba(0,0,0,1) 100%);
+  font-family: 'Sulphur Point', sans-serif;">
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <h1 class="mt-5 mb-5" style="text-align:center; color:#d0d0d0;">Details Item</h1>
+
+    <div class="card mt-4" style="background: black">
+        <img alt="" class="card-img-top" src="{{ barang.gambar.url }}" />
+        <div class="card-body">
+            <h5 style="color : whitesmoke " class="card-title fw-bold">{{ barang.nama }}
+                <br> ~~~~~~~ 
+                <br> Harga: {{ barang.harga }}
+                <br> Stok : {{ barang.stok }} 
+            </h5>
+            <p style="color: grey" class="card-text">
+                {{ barang.toko.nama }}
+            <br/>
+                {{ barang.toko.telpon }} 
+            </p>
+        </div>
+    </div>
+    <!-- Add to Cart form with quantity input -->
+<form method="post" action="{% url 'add_to_cart' barang.id %}">
+    {% csrf_token %}
+    <label style="color: whitesmoke" for="quantity">Jumlah Pesanan:</label>
+    <input type="number" name="quantity" id="quantity" value="1" min="1">
+    <button type="submit" class="btn btn-secondary">Pesan</button>
+</form>    
+    
+    {% endblock content %}    
+  </body>
+</html>
